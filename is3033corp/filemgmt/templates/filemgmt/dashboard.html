@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>File Manager</title>
+    </head>
+    <body style="background-color:NavajoWhite;">
+        <div align="right"><a href=><button style="width:60px;height:30px;">Logout</button></a></div>
+        <div align="center">
+            <h1 style="color: darkolivegreen;">Local file system</h1>
+            <p style="color: darkolivegreen;"><strong>CWD: </strong>{{ current_working_directory }}</p>
+        </div>      
+        <ul>
+            <form action="/md">
+              <input type="submit" value="New Folder"/>
+              <input name="folder" type="text" placeholder="folder name"/>
+            </form>
+            <form action="/mf">
+              <input type="submit" value="New File"/>
+              <input name="file" type="text" placeholder="file name"/>
+            </form>
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
+              <input type="file" name="file" />
+              <input type="submit" value="Upload"/>
+            </form>
+            <li><a href="/cd?path=..">&#11013;</a></li>
+            {% for item in file_list %}
+              {% if '.' not in item %}
+                  <li>
+                     <strong><a href="/cd?path={{ current_working_directory }}/{{ item }}">{{item}}</a></strong>
+                     <a href="/download?file={{ current_working_directory }}/{{ item }}"><button class='btn btn-default'>Download</button></a>                     
+                     <a href="/rmdir?dir={{ item }}"><button class='btn btn-default' title="WARNING. This will delete file forever.">X</button></a>
+                  </li>
+              {% elif '.txt' in item or '.py' in item or '.json' in item %}
+                  <li>
+                     <a href="/view?file={{ current_working_directory }}/{{ item }}" style="text-decoration:none">{{item}}</a>
+                     <a href="/download?file={{ current_working_directory }}/{{ item }}"><button class='btn btn-default'>Download</button></a>                     
+                     <a href="/rm?file={{ item }}"><button class='btn btn-default' title="WARNING. This will delete file forever.">X</button></a>
+                  </li>  
+              {% else %}
+                  <li>{{item}}</li>
+              {% endif %}
+            {% endfor %} 
+        </ul>  
+    </body>
+</html>
