@@ -14,9 +14,9 @@ The logging functionality tracks all file-related activities such as file upload
 Python  
 Django  
 LDAP  
-Google Cloud 
-Html 
-CSS 
+Google Cloud  
+Html  
+CSS  
 
 
 
