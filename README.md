@@ -9,14 +9,14 @@ This application allows users to upload, download, and manage files securely. Th
 
 The logging functionality tracks all file-related activities such as file uploads, downloads, and modifications. This ensures accountability and helps to identify any unauthorized access or changes.
 
-Installation
-To install and run the application, follow these steps:
+Installation  
+To install and run the application, follow these steps:  
 
-Clone the repository
-Install Python and Django
-Install LDAP server
-Install required Python packages
-Run the Django development server
+Clone the repository  
+Install Python and Django  
+Install LDAP server  
+Install required Python packages  
+Run the Django development server  
 
-Usage
+Usage  
 Once the application is installed and running, users can access the file management system by logging in with their LDAP credentials. Users can upload files, download files, and manage files as per their permissions.
