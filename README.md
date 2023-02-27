@@ -11,12 +11,12 @@ The logging functionality tracks all file-related activities such as file upload
 
 ## Technologies used
 
-Python
-Django
-LDAP
-Google Cloud
-Html
-CSS
+Python  
+Django  
+LDAP  
+Google Cloud 
+Html 
+CSS 
 
 
 
