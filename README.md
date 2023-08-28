@@ -9,7 +9,7 @@ This application allows users to upload, download, and manage files securely. Th
 
 The logging functionality tracks all file-related activities such as file uploads, downloads, and modifications. This ensures accountability and helps to identify any unauthorized access or changes.
 
-## Technologies used
+## Tech stack
 
 Python  
 Django  
